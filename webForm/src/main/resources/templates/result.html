@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+    <h1>Result</h1>
+
+    <p th:text="'Name: ' + ${greeting.name}" />
+    <p th:text="'Age: ' + ${greeting.age}" />
+    <p th:text="'Gender: ' + ${greeting.gender}" />
+    <p th:text="'Email: ' + ${greeting.email}" />
+    <p th:text="'City: ' + ${greeting.city}" />
+    <p>Insert into MySQL successfully!</p>
+
+    <p><a href="/greeting">Return</a></p>
+    <p><a href="/all">See Records</a></p>
+</body>
+
+</html>
