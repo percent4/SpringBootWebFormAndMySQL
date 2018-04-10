@@ -5,13 +5,11 @@ import hello.UserRepository;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.validation.Valid;
 
 @Controller
 public class GreetingController {
@@ -38,12 +36,16 @@ public class GreetingController {
         userRepository.save(g);
 
         return "result";
+
     }
 
-    @GetMapping(path="/all")
-    public @ResponseBody Iterable<Greeting> getAllUsers() {
-        // This returns a JSON or XML with the users
-        return userRepository.findAll();
+    @GetMapping("/all")
+    public String getMessage(Model model) {
+
+        Iterable<Greeting> users = userRepository.findAll();
+
+        model.addAttribute("users", users);
+        return "all";
     }
 
 }

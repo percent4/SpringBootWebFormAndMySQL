@@ -5,20 +5,31 @@
 <head>
     <title>Getting Started: Handling Form Submission</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
-    <h1>Result</h1>
+<center>
+    <br><br>
+    <h2 style="color:green">Result</h2>
+    <br><br>
 
-    <p th:text="'Name: ' + ${greeting.name}" />
-    <p th:text="'Age: ' + ${greeting.age}" />
-    <p th:text="'Gender: ' + ${greeting.gender}" />
-    <p th:text="'Email: ' + ${greeting.email}" />
-    <p th:text="'City: ' + ${greeting.city}" />
-    <p>Insert into MySQL successfully!</p>
+    <ul class="list-group" style="width:300px">
+        <li class="list-group-item" th:text="'Name: ' + ${greeting.name}"></li>
+        <li class="list-group-item" th:text="'Age: ' + ${greeting.age}"></li>
+        <li class="list-group-item" th:text="'Gender: ' + ${greeting.gender}"></li>
+        <li class="list-group-item" th:text="'Email: ' + ${greeting.email}"></li>
+        <li class="list-group-item" th:text="'City: ' + ${greeting.city}"></li>
+    </ul>
 
-    <p><a href="/greeting">Return</a></p>
-    <p><a href="/all">See Records</a></p>
+    <h4>
+        <span class="glyphicon glyphicon-saved"></span>
+        Insert into MySQL successfully!
+    </h4>
+
+    <a href="/greeting"><button type="button" class="btn btn-primary">Return to home</button></a>
+    <a href="/all"><button type="button" class="btn btn-warning">See Records</button></a>
+
 </body>
 
 </html>
